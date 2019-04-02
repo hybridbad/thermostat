@@ -1,4 +1,4 @@
-
+'use strict';
 
 describe('#feature test', function(){
   var thermostat;
