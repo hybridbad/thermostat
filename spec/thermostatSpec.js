@@ -12,7 +12,7 @@ describe('#feature test', function(){
       expect(thermostat._temperature).toBe(20);
     });
     it('have a min temp of 10', function(){
-      expect(thermostat._minTemp).toBe(10);
+      expect(thermostat.MINIMUM_TEMPERATURE).toBe(10);
     });
     it('powersaving mode on', function(){
       expect(thermostat._powerSaving).toBe(true);

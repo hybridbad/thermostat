@@ -2,9 +2,11 @@
 
 function Thermostat () {
   this._temperature = 20;
-  this._minTemp = 10;
+  this.MINIMUM_TEMPERATURE = 10;
   this._powerSaving = true;
-  this._maxTemp = 25;
+  this.MAX_TEMP_PSM_ON = 25;
+  this.MAX_TEMP_PSM_OFF = 32;
+  this._maxTemp = this.MAX_TEMP_PSM_ON;
 };
 
 Thermostat.prototype.up = function () {
@@ -17,9 +19,9 @@ Thermostat.prototype.up = function () {
 };
 
 Thermostat.prototype.down = function() {
-  if (this._temperature === this._minTemp) {
-    this._temperature = this._minTemp;
-    console.log('Minimum temperature is 10!');
+  if (this._temperature === this.MINIMUM_TEMPERATURE) {
+    this._temperature = this.MINIMUM_TEMPERATURE;
+    console.log('Minimum temperature is ' + this.MINIMUM_TEMPERATURE + '!');
   } else {
     this._temperature -= 1;
   }
@@ -29,10 +31,10 @@ Thermostat.prototype.down = function() {
 Thermostat.prototype.togglePowerSaving = function () {
   if (this._powerSaving === true) {
     this._powerSaving = false;
-    this._maxTemp = 32;
+    this._maxTemp = this.MAX_TEMP_PSM_OFF;
   } else {
     this._powerSaving = true;
-    this._maxTemp = 25;
+    this._maxTemp = this.MAX_TEMP_PSM_ON;
   }
 };
 
