@@ -58,4 +58,26 @@ describe('#feature test', function(){
     });
   });
 
+  describe('reset temperature', function(){
+    it('changes the temperature to 20', function(){
+      thermostat.reset();
+      expect(thermostat._temperature).toBe(20);
+    });
+  });
+
+  describe('energy usage', function(){
+    it('returns low when temp is less than 18', function(){
+      thermostat._temperature = 17;
+      expect(thermostat.energyUsage()).toBe('low-usage');
+    });
+    it('returns medium when temp is less than 25', function(){
+      thermostat._temperature = 23;
+      expect(thermostat.energyUsage()).toBe('medium-usage');
+    });
+    it('returns high when temp is more than 25', function(){
+      thermostat._temperature = 27;
+      expect(thermostat.energyUsage()).toBe('high-usage');
+    });
+  });
+
 });
