@@ -7,6 +7,10 @@
 - HTML
 - CSS
 
+### Picture!
+
+![Thermostat](https://github.com/hybridbad/thermostat/imgs/thermostat.png "Thermostat")
+
 ### Set up the app
 
 ```shell
