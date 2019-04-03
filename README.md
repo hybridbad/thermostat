@@ -9,7 +9,7 @@
 
 ### Picture!
 
-![Thermostat](https://github.com/hybridbad/thermostat/imgs/thermostat.png "Thermostat")
+![Thermostat](https://github.com/hybridbad/thermostat/blob/master/imgs/thermostat.png?raw=true "Thermostat")
 
 ### Set up the app
 
