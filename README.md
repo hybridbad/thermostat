@@ -9,14 +9,16 @@
 
 ### Set up the app
 
-```script
+```shell
 git clone https://github.com/hybridbad/thermostat
 cd thermostat
 open index.html
 ```
-Run Tests
+#### Run Tests
 
-`open SpecRunner.html`
+```shell
+open SpecRunner.html
+```
 
 ### User stories
 

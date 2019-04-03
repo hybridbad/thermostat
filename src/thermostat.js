@@ -7,13 +7,11 @@ function Thermostat () {
   this.MAX_TEMP_PSM_ON = 25;
   this.MAX_TEMP_PSM_OFF = 32;
   this._maxTemp = this.MAX_TEMP_PSM_ON;
-  this._powerSavingStatus = 'Power Saving is On';
 };
 
 Thermostat.prototype.up = function () {
   if (this._temperature >= this._maxTemp) {
     this._temperature = this._maxTemp;
-    alert('Maximum temperature is ' + this._maxTemp + '!');
   } else {
     this._temperature += 1;
   }
@@ -22,7 +20,6 @@ Thermostat.prototype.up = function () {
 Thermostat.prototype.down = function() {
   if (this._temperature === this.MINIMUM_TEMPERATURE) {
     this._temperature = this.MINIMUM_TEMPERATURE;
-    alert('Minimum temperature is ' + this.MINIMUM_TEMPERATURE + '!');
   } else {
     this._temperature -= 1;
   }
@@ -33,12 +30,13 @@ Thermostat.prototype.togglePowerSaving = function () {
   if (this._powerSaving === true) {
     this._powerSaving = false;
     this._maxTemp = this.MAX_TEMP_PSM_OFF;
-    this._powerSavingStatus = 'Power Saving is Off';
   } else {
     this._powerSaving = true;
     this._maxTemp = this.MAX_TEMP_PSM_ON;
-    this._powerSavingStatus = 'Power Saving is On';
-  }
+    if (thermostat._temperature > 25 ) {
+      thermostat.reset();
+    };
+  };
 };
 
 Thermostat.prototype.reset = function () {
@@ -54,5 +52,9 @@ Thermostat.prototype.energyUsage = function() {
     return 'high-usage';
   };
 };
+
+Thermostat.prototype.value = function () {
+  return this._temperature
+}
 
 var thermostat = new Thermostat();

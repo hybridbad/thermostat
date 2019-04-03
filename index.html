@@ -9,6 +9,8 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
   </head>
@@ -16,21 +18,37 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class='container'>
-      <h2 id='temperature'></h2>
-      <h2 id="energy-usage"></h2>
-      <button id='up' type="button" class="btn btn-primary">Up</button>
-      <br>
-      <br>
-      <button id='down' type="button" class="btn btn-primary">Down</button>
-      <br>
-      <br>
-      <button id='reset' type="button" class="btn btn-primary">Reset</button>
-      <br>
-      <br>
-      <button id='psm-toggle' type="button" class="btn btn-primary"><span id="psm-text"></span></button>
-    </div>
+
+
+    <span class="psm"><i class="material-icons">settings_power</i></span>
     
+    
+    <div class="thermostat">
+
+      <div class="bar">
+        <div class="inner_bar"></div>
+        <div class='hold left'>
+          <div class='fill fill1'></div>
+        </div>
+        <div class='hold right'>
+          <div class='fill fill2'></div>
+        </div>
+        <span class="reset"><i class="material-icons">settings_backup_restore</i></span>
+      </div>
+      <div class="shadow">
+        <div class="shadow-cube"></div>
+      </div>
+      <div class="number">
+        <span class="ext">19</span>
+      </div>
+      <div class="center">
+        <span class="arrow minus"><i class="material-icons">keyboard_arrow_left</i></span>
+        <span class="arrow plus"><i class="material-icons">keyboard_arrow_right</i></span>
+        <div class="small">
+          <span class="heat energy-usage">19</span>
+        </div>
+      </div>
+    </div>
     
     <script src="src/thermostat.js" async defer></script>
     <script
