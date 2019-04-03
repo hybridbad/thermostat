@@ -13,7 +13,7 @@ function Thermostat () {
 Thermostat.prototype.up = function () {
   if (this._temperature >= this._maxTemp) {
     this._temperature = this._maxTemp;
-    alert('Maximum temperature ' + this._maxTemp);
+    alert('Maximum temperature is ' + this._maxTemp + '!');
   } else {
     this._temperature += 1;
   }
