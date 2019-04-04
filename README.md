@@ -6,6 +6,8 @@
 - jQuery
 - HTML
 - CSS
+- AJAX
+- API Integration
 
 ### Picture!
 
@@ -17,8 +19,10 @@
 git clone https://github.com/hybridbad/thermostat
 cd thermostat
 open index.html
+open weather.html
 ```
-#### Run Tests
+
+#### Run Tests on Thermostat
 
 ```shell
 open SpecRunner.html
