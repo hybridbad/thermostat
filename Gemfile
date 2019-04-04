@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+ruby '2.6.0'
+
+gem 'sinatra'
+gem 'rspec-sinatra'
+gem 'rspec'
+gem 'sinatra-json'
+gem 'rerun'
+gem 'data_mapper'
+gem 'dm-postgres-adapter'
+gem 'json'

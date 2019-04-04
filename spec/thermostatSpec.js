@@ -44,7 +44,7 @@ describe('#feature test', function(){
     });
 
     it('min temperature is 10', function(){
-      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].forEach(function(i) {
+      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].forEach(function(i) {
         thermostat.down();
       })
       expect(thermostat._temperature).toBe(10);
