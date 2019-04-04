@@ -112,7 +112,6 @@ PLATFORMS
 DEPENDENCIES
   data_mapper
   dm-postgres-adapter
-  json
   rerun
   rspec
   rspec-sinatra

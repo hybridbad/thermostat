@@ -57,6 +57,4 @@ Thermostat.prototype.energyUsage = function () {
 
 Thermostat.prototype.value = function () {
   return this._temperature
-}
-
-var thermostat = new Thermostat();
+};

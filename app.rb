@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/json'
+require_relative 'thermostat_data'
 require_relative 'data_mapper_setup'
-require 'json'
 
 class Server < Sinatra::Base
   set :root, File.dirname(__FILE__)
@@ -10,13 +10,13 @@ class Server < Sinatra::Base
     File.read('index.html')
   end
 
-  post '/temp' do
-    content_type :json    
-  end
+  # post '/temp' do
+  #   content_type :json    
+  # end
 
-  get '/temp' do
+  # get '/temp' do
 
-  end
+  # end
 
   run! if app_file == $0
 

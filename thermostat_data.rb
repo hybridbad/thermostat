@@ -6,4 +6,5 @@ class Thermostat
   property :id,               Serial
   property :temperature,      Integer
   property :psmstatus,        Boolean
+  
 end
