@@ -18,8 +18,11 @@
 ```shell
 git clone https://github.com/hybridbad/thermostat
 cd thermostat
+psql
+CREATE DATABASE thermostat
+quit
+ruby app.rb
 open index.html
-open weather.html
 ```
 
 #### Run Tests on Thermostat
