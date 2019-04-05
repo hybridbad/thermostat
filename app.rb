@@ -8,7 +8,7 @@ class Server < Sinatra::Base
   set :public_folder, File.dirname(__FILE__)
 
   get '/' do
-    erb :index
+    'Hi what you doing here'
   end
 
   post '/temp' do

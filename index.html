@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thermostat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/style.css">
+  </head>
+  <body>
+    <section>
+      <form id="select-city">
+        <h1>Current temperature: <span id="current-temperature"></span></h1>
+        <input id="current-city" type="text" placeholder="Enter a city"></input>
+        <input type="submit"></input>
+      </form>
+    </section>
+
+    <span class="psm"><i class="material-icons">settings_power</i></span>
+    
+    
+    <div class="thermostat">
+
+      <div class="bar">
+        <div class="inner_bar"></div>
+        <div class='hold left'>
+          <div class='fill fill1'></div>
+        </div>
+        <div class='hold right'>
+          <div class='fill fill2'></div>
+        </div>
+        <span class="reset"><i class="material-icons">settings_backup_restore</i></span>
+      </div>
+      <div class="shadow">
+        <div class="shadow-cube"></div>
+      </div>
+      <div class="number">
+        <span class="ext">20</span>
+      </div>
+      <div class="center">
+        <span class="arrow minus"><i class="material-icons">keyboard_arrow_left</i></span>
+        <span class="arrow plus"><i class="material-icons">keyboard_arrow_right</i></span>
+        <div class="small">
+          <span class="heat energy-usage">20</span>
+        </div>
+      </div>
+    </div>
+    
+    <script src="/public/src/thermostat.js"></script>
+    <script src="/public/src/interface.js"></script>
+  </body>
+</html>
