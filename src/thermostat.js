@@ -32,6 +32,10 @@ Thermostat.prototype.togglePowerSaving = function () {
   };
 };
 
+Thermostat.prototype.setTempToCity = function(value){
+  this.temperature = value;
+}
+
 Thermostat.prototype.isPowerSavingOn = function () {
   return this._powerSaving;
 };

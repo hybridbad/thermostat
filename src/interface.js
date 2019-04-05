@@ -1,5 +1,7 @@
+var thermostat = new Thermostat();
+getThermostatData();
+
 $(document).ready(function(){
-  var thermostat = new Thermostat();
   updatePage();
   displayWeather('London');
 
@@ -40,9 +42,7 @@ $(document).ready(function(){
     $(".shadow").css("transform", "translate(-50%, -50%) rotate("+ (-180 + thermostat._temperature * 10)+"deg)");
     $(".fill").css("animation", "none");
     $(".shadow").css("animation", "none");
-    var tempSave = thermostat._temperature;
   };
-
 
   $('.reset').click(function() {
     thermostat.reset();
@@ -81,6 +81,13 @@ $(document).ready(function(){
       }
     }  
   });
+
+  function getThermostatData() {
+    $.getJSON("http://localhost:9292/api", function(data){
+      var temp = data[0].temperature;
+      var psmstatus = data[0].psmstatus;
+    });
+  };
 
 });
 
