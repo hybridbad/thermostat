@@ -1,6 +1,6 @@
 require 'data_mapper'
 
-class Thermostat
+class ThermostatData
   include DataMapper::Resource
 
   property :id,               Serial

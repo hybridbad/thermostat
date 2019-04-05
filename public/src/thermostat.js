@@ -1,6 +1,6 @@
 'use strict';
 
-function Thermostat () {
+function Thermostat() {
   this._temperature = 20;
   this.MINIMUM_TEMPERATURE = 10;
   this._powerSaving = true;
@@ -15,10 +15,10 @@ Thermostat.prototype.up = function () {
   }
 };
 
-Thermostat.prototype.down = function() {
+Thermostat.prototype.down = function () {
   if (this._temperature > this.MINIMUM_TEMPERATURE) {
     this._temperature--;
-  } 
+  }
 };
 
 Thermostat.prototype.togglePowerSaving = function () {
@@ -28,11 +28,13 @@ Thermostat.prototype.togglePowerSaving = function () {
   } else {
     this._powerSaving = true;
     this._maxTemp = this.MAX_TEMP_PSM_ON;
-    if (this._temperature > 25 ) { thermostat.reset() };
+    if (this._temperature > 25) {
+      thermostat.reset()
+    };
   };
 };
 
-Thermostat.prototype.setTempToCity = function(value){
+Thermostat.prototype.setTempToCity = function (value) {
   this.temperature = value;
 }
 

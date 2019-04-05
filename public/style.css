@@ -32,8 +32,6 @@ html, body {
 
 .psm {
   cursor: pointer;
-  width: 48px;
-  height: 48px;
 }
 
 .center_radius, .thermostat .center .small, .thermostat .center, .thermostat .bar, .thermostat {
