@@ -1,18 +1,9 @@
+// eslint-disable-next-line no-undef
 var thermostat = new Thermostat();
 
 $(document).ready(function () {
 
-  $.get('http://localhost:9292/temp', function(data){
-    console.log(data);
-    var temp = data.temperature;
-    var psmstate = data.psmstatus;
-
-    thermostat._temperature = parseInt(temp);
-    thermostat._powerSaving = psmstate;
-    updatePage();
-    dialDown();
-    dialUp();
-  });
+  getTempData();  
 
   $('#select-city').submit(function (event) {
     event.preventDefault();
@@ -57,7 +48,7 @@ function displayWeather(city) {
   $.get(url + token + units, function (data) {
     $('#current-temperature').text(data.main.temp);
   });
-};
+}
 
 function updatePage() {
   $('#temperature').text(thermostat._temperature);
@@ -68,19 +59,20 @@ function updatePage() {
     $('.energy-usage').css('color', 'black');
   } else {
     $('.energy-usage').css('color', 'red');
-  };
+  }
   if (thermostat._powerSaving === false) {
     $(".psm").css('color', 'red')
   } else {
     $(".psm").css('color', 'black')
-  };
+  }
   $(".heat").text("" + thermostat._temperature);
   $(".ext").text("" + thermostat._temperature);
   $(".number").css("transform", "translate(-50%, -50%) rotate(" + (-180 + thermostat._temperature * 10) + "deg)");
   $(".shadow").css("transform", "translate(-50%, -50%) rotate(" + (-180 + thermostat._temperature * 10) + "deg)");
   $(".fill").css("animation", "none");
   $(".shadow").css("animation", "none");
-};
+  postTempData();
+}
 
 function dialUp () {
   if (thermostat._temperature > 19) {
@@ -90,7 +82,7 @@ function dialUp () {
   } else {
     $(".fill2").css("transform", "rotate(" + thermostat._temperature * 10 + "deg)").css("transition-delay", "0s");
   }
-};
+}
 
 function dialDown () {
   if (thermostat._temperature >= 18) {
@@ -100,7 +92,28 @@ function dialDown () {
   } else {
     $(".fill2").css("transform", "rotate(" + thermostat._temperature * 10 + "deg)").css("transition-delay", "0s");
   }
-};
+}
+
+function getTempData() {
+  $.get('http://localhost:9292/temp', function(data){
+    console.log(data);
+    var temp = data.temperature;
+    var psmstate = data.psmstatus;
+
+    thermostat._temperature = parseInt(temp);
+    thermostat._powerSaving = psmstate;
+    updatePage();
+    dialDown();
+    dialUp();
+  });
+}
+
+function postTempData() {
+  $.post('http://localhost:9292/temp', {
+    'temperature': thermostat.value(),
+    'psmstatus': thermostat.isPowerSavingOn()
+    });
+}
 
 
 

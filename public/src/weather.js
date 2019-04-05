@@ -5,7 +5,7 @@ function displayWeather(city){
   $.get(url + token + units, function(data){
     $('#current-temperature').text(data.main.temp);
   });
-};
+}
 
 displayWeather('London');
 

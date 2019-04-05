@@ -7,7 +7,7 @@ function Thermostat() {
   this.MAX_TEMP_PSM_ON = 25;
   this.MAX_TEMP_PSM_OFF = 32;
   this._maxTemp = this.MAX_TEMP_PSM_ON;
-};
+}
 
 Thermostat.prototype.up = function () {
   if (this._temperature < this._maxTemp) {
@@ -29,18 +29,14 @@ Thermostat.prototype.togglePowerSaving = function () {
     this._powerSaving = true;
     this._maxTemp = this.MAX_TEMP_PSM_ON;
     if (this._temperature > 25) {
-      thermostat.reset()
-    };
-  };
+      this.reset()
+    }
+  }
 };
 
 Thermostat.prototype.setTempToCity = function (value) {
   this.temperature = value;
 }
-
-Thermostat.prototype.isPowerSavingOn = function () {
-  return this._powerSaving;
-};
 
 Thermostat.prototype.reset = function () {
   this._temperature = 20;
@@ -63,4 +59,8 @@ Thermostat.prototype.energyUsage = function () {
 
 Thermostat.prototype.value = function () {
   return this._temperature
+};
+
+Thermostat.prototype.isPowerSavingOn = function () {
+  return this._powerSaving;
 };

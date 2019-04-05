@@ -7,10 +7,14 @@ class Server < Sinatra::Base
   set :root, File.dirname(__FILE__)
   set :public_folder, File.dirname(__FILE__)
 
-  enable :sessions
-
   get '/' do
     erb :index
+  end
+
+  post '/temp' do
+    content_type :json
+    data = ThermostatData.get(1)
+    ThermostatData.update(temperature: params[:temperature], psmstatus: params[:psmstatus])
   end
 
   get '/temp' do
